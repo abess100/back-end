@@ -29,7 +29,7 @@ router.post('/', (req, res) =>{
 })
 
 router.put('/:id', (req,res) =>{
-    const {id_apprenant} =req.body
+    const {id_apprenant} = req.body
     const {nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire, filiere, num_tel} = req.body
     connection.query('update apprenant set nom = ? , sexe = ?, date_de_naissance = ?, prenom =?, email=?, niveau=?, activite_extrascolaire=?, filiere = ?, num_tel=? where id_apprenant= ?', [nom , sexe, date_de_naissance, prenom, email, niveau, activite_extrascolaire , filiere ,num_tel,id_apprenant], (error) =>{
         if(error){
